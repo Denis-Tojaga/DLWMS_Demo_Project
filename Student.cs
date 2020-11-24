@@ -48,40 +48,8 @@ namespace DLWMS_Demo
         }
         private void DodajBuiltInPredmete()
         {
-            PredmetiStudenta.Add(new Predmet()
-            {
-                NazivPredmeta = "Programiranje 2",
-                GodinaStudija="Prva godina",
-                OcjenePredmeta = new List<int>(),
-            });
-
-            PredmetiStudenta.Add(new Predmet()
-            {
-                NazivPredmeta = "Baze podataka 2",
-                GodinaStudija = "Druga godina",
-                OcjenePredmeta = new List<int>()
-            });
-
-            PredmetiStudenta.Add(new Predmet()
-            {
-                NazivPredmeta = "Web razvoj i dizajn",
-                GodinaStudija = "Prva godina",
-                OcjenePredmeta = new List<int>()
-            });
-
-            PredmetiStudenta.Add(new Predmet()
-            {
-                NazivPredmeta = "Matematika 2",
-                GodinaStudija = "Prva godina",
-                OcjenePredmeta = new List<int>()
-            });
-
-            PredmetiStudenta.Add(new Predmet()
-            {
-                NazivPredmeta = "Razvoj softvera",
-                GodinaStudija = "Treca godina",
-                OcjenePredmeta = new List<int>()
-            });
+            foreach (var predmet in InMemoryDB.Predmeti)
+                PredmetiStudenta.Add(predmet);
         }
         private void PostaviProsjekPredmetima()
         {
@@ -97,5 +65,7 @@ namespace DLWMS_Demo
                 prosjek += ocjena;
             return prosjek / predmetStudenta.OcjenePredmeta.Count;
         }
+
+       
     }
 }

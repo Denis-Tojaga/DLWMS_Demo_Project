@@ -17,7 +17,6 @@ namespace DLWMS_Demo
         public string Titula { get; set; }
         public string Email { get; set; }
         public Image slikaProfesora { get; set; }
-
         public string Username { get; set; }
         public string Password { get; set; }
 
@@ -25,6 +24,12 @@ namespace DLWMS_Demo
         public Profesor()
         {
             PredmetiProfesora = new List<Predmet>();
+            slikaProfesora = null;
+        }
+
+        public override string ToString()
+        {
+            return $"{Ime} {Prezime}";
         }
     }
 }

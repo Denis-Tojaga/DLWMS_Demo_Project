@@ -20,3 +20,5 @@ C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Debug\DLWMS_Demo.csproj.G
 C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Debug\DLWMS_Demo.csproj.CoreCompileInputs.cache
 C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Debug\DLWMS_Demo.exe
 C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Debug\DLWMS_Demo.pdb
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Debug\DLWMS_Demo.frmAddPredmet.resources
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Debug\DLWMS_Demo.frmDetaljnoOPredmetu.resources

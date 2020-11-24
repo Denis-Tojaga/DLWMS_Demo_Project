@@ -16,6 +16,7 @@ namespace DLWMS_Demo
         public frmStudentPodaci()
         {
             InitializeComponent();
+            dgvPredmetiStudenta.AutoGenerateColumns = false;
             _student = new Student();
         }
 
@@ -26,6 +27,10 @@ namespace DLWMS_Demo
             UcitajPodatkeUFormu(_student);
         }
 
+
+        /// <summary>
+        /// Ucitavanje podataka studenta koji se logirao na sistem
+        /// </summary>
         private void UcitajPodatkeUFormu(Student student)
         {
             if(student!=null)
@@ -43,8 +48,10 @@ namespace DLWMS_Demo
         private void frmStudentPodaci_Load(object sender, EventArgs e)
         {
             dgvPredmetiStudenta.Hide();
-            //btnSaveChanges.Hide();
         }
+
+
+
 
 
 
@@ -90,16 +97,20 @@ namespace DLWMS_Demo
         }
 
 
-
+        /// <summary>
+        /// Desnim klikom na predmet se prikazuje opcija za detaljni pregled predmeta 
+        /// </summary>
         private void dgvPredmetiStudenta_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
-                cmsMeni.Show(Cursor.Position);
+            cmsMeni.Show(Cursor.Position);
         }
-
-        private void dodajPredmetToolStripMenuItem_Click(object sender, EventArgs e)
+        private void checkDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            Hide();
+            Predmet kliknutiPredmet = dgvPredmetiStudenta.SelectedRows[0].DataBoundItem as Predmet;
+            frmDetaljnoOPredmetu detaljiPredmeta = new frmDetaljnoOPredmetu(kliknutiPredmet);
+            if (detaljiPredmeta.ShowDialog() == DialogResult.OK)
+                Show();
         }
     }
 }
