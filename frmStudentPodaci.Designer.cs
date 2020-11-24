@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pbProfilnaStudenta = new System.Windows.Forms.PictureBox();
             this.btnChangePhoto = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBrojIndeksa = new System.Windows.Forms.TextBox();
@@ -39,48 +38,57 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtIme = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dgvPredmetiStudenta = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnPrikaziPredmete = new System.Windows.Forms.Button();
             this.cmsMeni = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dodajPredmetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pogledajDetaljnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ofdSlika = new System.Windows.Forms.OpenFileDialog();
+            this.msMeni = new System.Windows.Forms.MenuStrip();
+            this.licniPodaciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prikazPredmetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.postavkeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gbPodaci = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.gbNovaFotografija = new System.Windows.Forms.GroupBox();
+            this.txtPutanjaDoSlike = new System.Windows.Forms.TextBox();
+            this.btnChooseFile = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pbProfilnaStudenta = new System.Windows.Forms.PictureBox();
+            this.dgvPredmetiStudenta = new System.Windows.Forms.DataGridView();
             this.NazivPredmeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GodinaStudija = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ofdSlika = new System.Windows.Forms.OpenFileDialog();
-            this.btnSaveChanges = new System.Windows.Forms.Button();
+            this.ProsjekOcjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblBrojPolozenih = new System.Windows.Forms.Label();
+            this.cmsMeni.SuspendLayout();
+            this.msMeni.SuspendLayout();
+            this.gbPodaci.SuspendLayout();
+            this.gbNovaFotografija.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilnaStudenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPredmetiStudenta)).BeginInit();
-            this.cmsMeni.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pbProfilnaStudenta
-            // 
-            this.pbProfilnaStudenta.Location = new System.Drawing.Point(32, 49);
-            this.pbProfilnaStudenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pbProfilnaStudenta.Name = "pbProfilnaStudenta";
-            this.pbProfilnaStudenta.Size = new System.Drawing.Size(175, 181);
-            this.pbProfilnaStudenta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbProfilnaStudenta.TabIndex = 1;
-            this.pbProfilnaStudenta.TabStop = false;
             // 
             // btnChangePhoto
             // 
-            this.btnChangePhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangePhoto.Location = new System.Drawing.Point(61, 238);
-            this.btnChangePhoto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChangePhoto.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnChangePhoto.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePhoto.ForeColor = System.Drawing.Color.White;
+            this.btnChangePhoto.Location = new System.Drawing.Point(616, 51);
+            this.btnChangePhoto.Margin = new System.Windows.Forms.Padding(4);
             this.btnChangePhoto.Name = "btnChangePhoto";
-            this.btnChangePhoto.Size = new System.Drawing.Size(122, 28);
+            this.btnChangePhoto.Size = new System.Drawing.Size(103, 25);
             this.btnChangePhoto.TabIndex = 2;
-            this.btnChangePhoto.Text = "Change photo";
-            this.btnChangePhoto.UseVisualStyleBackColor = true;
+            this.btnChangePhoto.Text = "Postavi";
+            this.btnChangePhoto.UseVisualStyleBackColor = false;
             this.btnChangePhoto.Click += new System.EventHandler(this.btnChangePhoto_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Zilla Slab SemiBold", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(257, 49);
+            this.label1.Location = new System.Drawing.Point(299, 58);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 22);
@@ -89,16 +97,16 @@
             // 
             // txtBrojIndeksa
             // 
-            this.txtBrojIndeksa.Location = new System.Drawing.Point(237, 75);
-            this.txtBrojIndeksa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBrojIndeksa.Location = new System.Drawing.Point(279, 84);
+            this.txtBrojIndeksa.Margin = new System.Windows.Forms.Padding(4);
             this.txtBrojIndeksa.Name = "txtBrojIndeksa";
             this.txtBrojIndeksa.Size = new System.Drawing.Size(153, 23);
             this.txtBrojIndeksa.TabIndex = 4;
             // 
             // txtPrezime
             // 
-            this.txtPrezime.Location = new System.Drawing.Point(563, 75);
-            this.txtPrezime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrezime.Location = new System.Drawing.Point(605, 84);
+            this.txtPrezime.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(153, 23);
             this.txtPrezime.TabIndex = 6;
@@ -107,7 +115,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Zilla Slab SemiBold", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(600, 49);
+            this.label2.Location = new System.Drawing.Point(642, 58);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 22);
@@ -116,8 +124,8 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(725, 75);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Location = new System.Drawing.Point(767, 84);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(153, 23);
             this.txtEmail.TabIndex = 10;
@@ -126,7 +134,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Zilla Slab SemiBold", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(773, 49);
+            this.label3.Location = new System.Drawing.Point(815, 58);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 22);
@@ -135,8 +143,8 @@
             // 
             // txtIme
             // 
-            this.txtIme.Location = new System.Drawing.Point(400, 75);
-            this.txtIme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIme.Location = new System.Drawing.Point(442, 84);
+            this.txtIme.Margin = new System.Windows.Forms.Padding(4);
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(153, 23);
             this.txtIme.TabIndex = 8;
@@ -145,12 +153,203 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Zilla Slab SemiBold", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(455, 49);
+            this.label4.Location = new System.Drawing.Point(497, 58);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 22);
             this.label4.TabIndex = 7;
             this.label4.Text = "Ime";
+            // 
+            // cmsMeni
+            // 
+            this.cmsMeni.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dodajPredmetToolStripMenuItem});
+            this.cmsMeni.Name = "cmsMeni";
+            this.cmsMeni.Size = new System.Drawing.Size(181, 48);
+            // 
+            // dodajPredmetToolStripMenuItem
+            // 
+            this.dodajPredmetToolStripMenuItem.Name = "dodajPredmetToolStripMenuItem";
+            this.dodajPredmetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dodajPredmetToolStripMenuItem.Text = "Dodaj Predmet";
+            this.dodajPredmetToolStripMenuItem.Click += new System.EventHandler(this.dodajPredmetToolStripMenuItem_Click);
+            // 
+            // ofdSlika
+            // 
+            this.ofdSlika.FileName = "openFileDialog1";
+            // 
+            // msMeni
+            // 
+            this.msMeni.Font = new System.Drawing.Font("Zilla Slab", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msMeni.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.licniPodaciToolStripMenuItem,
+            this.prikazPredmetaToolStripMenuItem,
+            this.postavkeToolStripMenuItem});
+            this.msMeni.Location = new System.Drawing.Point(0, 0);
+            this.msMeni.Name = "msMeni";
+            this.msMeni.Size = new System.Drawing.Size(1075, 31);
+            this.msMeni.TabIndex = 16;
+            this.msMeni.Text = "menuStrip1";
+            // 
+            // licniPodaciToolStripMenuItem
+            // 
+            this.licniPodaciToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.licniPodaciToolStripMenuItem.Name = "licniPodaciToolStripMenuItem";
+            this.licniPodaciToolStripMenuItem.Size = new System.Drawing.Size(119, 27);
+            this.licniPodaciToolStripMenuItem.Text = "Licni podaci";
+            // 
+            // prikazPredmetaToolStripMenuItem
+            // 
+            this.prikazPredmetaToolStripMenuItem.Name = "prikazPredmetaToolStripMenuItem";
+            this.prikazPredmetaToolStripMenuItem.Size = new System.Drawing.Size(157, 27);
+            this.prikazPredmetaToolStripMenuItem.Text = "Prikaz Predmeta";
+            this.prikazPredmetaToolStripMenuItem.Click += new System.EventHandler(this.prikazPredmetaToolStripMenuItem_Click);
+            // 
+            // postavkeToolStripMenuItem
+            // 
+            this.postavkeToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.postavkeToolStripMenuItem.CheckOnClick = true;
+            this.postavkeToolStripMenuItem.Name = "postavkeToolStripMenuItem";
+            this.postavkeToolStripMenuItem.Size = new System.Drawing.Size(96, 27);
+            this.postavkeToolStripMenuItem.Text = "Postavke";
+            // 
+            // gbPodaci
+            // 
+            this.gbPodaci.BackColor = System.Drawing.Color.Gainsboro;
+            this.gbPodaci.Controls.Add(this.lblBrojPolozenih);
+            this.gbPodaci.Controls.Add(this.dgvPredmetiStudenta);
+            this.gbPodaci.Controls.Add(this.label11);
+            this.gbPodaci.Controls.Add(this.label5);
+            this.gbPodaci.Controls.Add(this.label9);
+            this.gbPodaci.Controls.Add(this.label10);
+            this.gbPodaci.Controls.Add(this.pbProfilnaStudenta);
+            this.gbPodaci.Controls.Add(this.label1);
+            this.gbPodaci.Controls.Add(this.txtBrojIndeksa);
+            this.gbPodaci.Controls.Add(this.label2);
+            this.gbPodaci.Controls.Add(this.txtPrezime);
+            this.gbPodaci.Controls.Add(this.txtEmail);
+            this.gbPodaci.Controls.Add(this.label4);
+            this.gbPodaci.Controls.Add(this.label3);
+            this.gbPodaci.Controls.Add(this.txtIme);
+            this.gbPodaci.Location = new System.Drawing.Point(48, 60);
+            this.gbPodaci.Name = "gbPodaci";
+            this.gbPodaci.Size = new System.Drawing.Size(989, 404);
+            this.gbPodaci.TabIndex = 17;
+            this.gbPodaci.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Zilla Slab", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(92, 301);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 22);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "1.1.2000";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(67, 282);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(118, 19);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Datum rodjenja";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Zilla Slab", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label9.Location = new System.Drawing.Point(9, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(85, 18);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Licni podaci";
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label10.Location = new System.Drawing.Point(9, 41);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(977, 1);
+            this.label10.TabIndex = 16;
+            // 
+            // gbNovaFotografija
+            // 
+            this.gbNovaFotografija.BackColor = System.Drawing.Color.LightGray;
+            this.gbNovaFotografija.Controls.Add(this.txtPutanjaDoSlike);
+            this.gbNovaFotografija.Controls.Add(this.btnChooseFile);
+            this.gbNovaFotografija.Controls.Add(this.btnChangePhoto);
+            this.gbNovaFotografija.Controls.Add(this.label8);
+            this.gbNovaFotografija.Controls.Add(this.label7);
+            this.gbNovaFotografija.Controls.Add(this.label6);
+            this.gbNovaFotografija.Location = new System.Drawing.Point(48, 482);
+            this.gbNovaFotografija.Name = "gbNovaFotografija";
+            this.gbNovaFotografija.Size = new System.Drawing.Size(989, 100);
+            this.gbNovaFotografija.TabIndex = 18;
+            this.gbNovaFotografija.TabStop = false;
+            // 
+            // txtPutanjaDoSlike
+            // 
+            this.txtPutanjaDoSlike.Font = new System.Drawing.Font("Zilla Slab", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPutanjaDoSlike.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtPutanjaDoSlike.Location = new System.Drawing.Point(379, 52);
+            this.txtPutanjaDoSlike.Name = "txtPutanjaDoSlike";
+            this.txtPutanjaDoSlike.ReadOnly = true;
+            this.txtPutanjaDoSlike.Size = new System.Drawing.Size(235, 23);
+            this.txtPutanjaDoSlike.TabIndex = 4;
+            this.txtPutanjaDoSlike.Text = "No file chosen";
+            // 
+            // btnChooseFile
+            // 
+            this.btnChooseFile.Location = new System.Drawing.Point(298, 51);
+            this.btnChooseFile.Name = "btnChooseFile";
+            this.btnChooseFile.Size = new System.Drawing.Size(75, 24);
+            this.btnChooseFile.TabIndex = 3;
+            this.btnChooseFile.Text = "Choose file";
+            this.btnChooseFile.UseVisualStyleBackColor = true;
+            this.btnChooseFile.Click += new System.EventHandler(this.btnChooseFile_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Zilla Slab", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(9, 58);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(82, 18);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Fotografija:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Zilla Slab", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label7.Location = new System.Drawing.Point(6, 7);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(113, 18);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Nova fotografija";
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label6.Location = new System.Drawing.Point(6, 29);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(977, 1);
+            this.label6.TabIndex = 0;
+            // 
+            // pbProfilnaStudenta
+            // 
+            this.pbProfilnaStudenta.Location = new System.Drawing.Point(36, 61);
+            this.pbProfilnaStudenta.Margin = new System.Windows.Forms.Padding(4);
+            this.pbProfilnaStudenta.Name = "pbProfilnaStudenta";
+            this.pbProfilnaStudenta.Size = new System.Drawing.Size(183, 217);
+            this.pbProfilnaStudenta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbProfilnaStudenta.TabIndex = 1;
+            this.pbProfilnaStudenta.TabStop = false;
             // 
             // dgvPredmetiStudenta
             // 
@@ -159,65 +358,22 @@
             this.dgvPredmetiStudenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPredmetiStudenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NazivPredmeta,
-            this.GodinaStudija});
-            this.dgvPredmetiStudenta.Location = new System.Drawing.Point(412, 107);
-            this.dgvPredmetiStudenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GodinaStudija,
+            this.ProsjekOcjena});
+            this.dgvPredmetiStudenta.Location = new System.Drawing.Point(279, 135);
             this.dgvPredmetiStudenta.Name = "dgvPredmetiStudenta";
             this.dgvPredmetiStudenta.ReadOnly = true;
-            this.dgvPredmetiStudenta.Size = new System.Drawing.Size(468, 224);
-            this.dgvPredmetiStudenta.TabIndex = 11;
-            this.dgvPredmetiStudenta.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPredmetiStudenta_CellMouseClick);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(494, 335);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(164, 19);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Vas ukupan prosjek je:";
-            // 
-            // btnPrikaziPredmete
-            // 
-            this.btnPrikaziPredmete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrikaziPredmete.Location = new System.Drawing.Point(237, 196);
-            this.btnPrikaziPredmete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnPrikaziPredmete.Name = "btnPrikaziPredmete";
-            this.btnPrikaziPredmete.Size = new System.Drawing.Size(155, 34);
-            this.btnPrikaziPredmete.TabIndex = 13;
-            this.btnPrikaziPredmete.Text = "Prikazi predmete";
-            this.btnPrikaziPredmete.UseVisualStyleBackColor = true;
-            this.btnPrikaziPredmete.Click += new System.EventHandler(this.btnPrikaziPredmete_Click);
-            // 
-            // cmsMeni
-            // 
-            this.cmsMeni.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dodajPredmetToolStripMenuItem,
-            this.pogledajDetaljnoToolStripMenuItem});
-            this.cmsMeni.Name = "cmsMeni";
-            this.cmsMeni.Size = new System.Drawing.Size(168, 48);
-            // 
-            // dodajPredmetToolStripMenuItem
-            // 
-            this.dodajPredmetToolStripMenuItem.Name = "dodajPredmetToolStripMenuItem";
-            this.dodajPredmetToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.dodajPredmetToolStripMenuItem.Text = "Dodaj Predmet";
-            // 
-            // pogledajDetaljnoToolStripMenuItem
-            // 
-            this.pogledajDetaljnoToolStripMenuItem.Name = "pogledajDetaljnoToolStripMenuItem";
-            this.pogledajDetaljnoToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.pogledajDetaljnoToolStripMenuItem.Text = "Pogledaj Detaljno";
+            this.dgvPredmetiStudenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPredmetiStudenta.Size = new System.Drawing.Size(641, 226);
+            this.dgvPredmetiStudenta.TabIndex = 20;
+            this.dgvPredmetiStudenta.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvPredmetiStudenta_MouseClick);
             // 
             // NazivPredmeta
             // 
             this.NazivPredmeta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.NazivPredmeta.DataPropertyName = "NazivPredmeta";
-            this.NazivPredmeta.HeaderText = "Naziv Predmeta";
+            this.NazivPredmeta.HeaderText = "NazivPredmeta";
             this.NazivPredmeta.Name = "NazivPredmeta";
-            this.NazivPredmeta.ReadOnly = true;
             // 
             // GodinaStudija
             // 
@@ -225,50 +381,49 @@
             this.GodinaStudija.DataPropertyName = "GodinaStudija";
             this.GodinaStudija.HeaderText = "Godina studija";
             this.GodinaStudija.Name = "GodinaStudija";
-            this.GodinaStudija.ReadOnly = true;
             // 
-            // ofdSlika
+            // ProsjekOcjena
             // 
-            this.ofdSlika.FileName = "openFileDialog1";
+            this.ProsjekOcjena.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ProsjekOcjena.DataPropertyName = "ProsjekOcjena";
+            this.ProsjekOcjena.HeaderText = "Prosjek ocjena";
+            this.ProsjekOcjena.Name = "ProsjekOcjena";
             // 
-            // btnSaveChanges
+            // lblBrojPolozenih
             // 
-            this.btnSaveChanges.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveChanges.Location = new System.Drawing.Point(750, 335);
-            this.btnSaveChanges.Name = "btnSaveChanges";
-            this.btnSaveChanges.Size = new System.Drawing.Size(130, 30);
-            this.btnSaveChanges.TabIndex = 15;
-            this.btnSaveChanges.Text = "Save changes";
-            this.btnSaveChanges.UseVisualStyleBackColor = true;
+            this.lblBrojPolozenih.AutoSize = true;
+            this.lblBrojPolozenih.Font = new System.Drawing.Font("Zilla Slab", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBrojPolozenih.Location = new System.Drawing.Point(674, 371);
+            this.lblBrojPolozenih.Name = "lblBrojPolozenih";
+            this.lblBrojPolozenih.Size = new System.Drawing.Size(226, 22);
+            this.lblBrojPolozenih.TabIndex = 21;
+            this.lblBrojPolozenih.Text = "Broj polozenih predmeta je: ";
             // 
             // frmStudentPodaci
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 374);
-            this.Controls.Add(this.btnSaveChanges);
-            this.Controls.Add(this.btnPrikaziPredmete);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.dgvPredmetiStudenta);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtIme);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtPrezime);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtBrojIndeksa);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnChangePhoto);
-            this.Controls.Add(this.pbProfilnaStudenta);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1075, 606);
+            this.Controls.Add(this.gbNovaFotografija);
+            this.Controls.Add(this.gbPodaci);
+            this.Controls.Add(this.msMeni);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MainMenuStrip = this.msMeni;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmStudentPodaci";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Vasi podaci";
             this.Load += new System.EventHandler(this.frmStudentPodaci_Load);
+            this.cmsMeni.ResumeLayout(false);
+            this.msMeni.ResumeLayout(false);
+            this.msMeni.PerformLayout();
+            this.gbPodaci.ResumeLayout(false);
+            this.gbPodaci.PerformLayout();
+            this.gbNovaFotografija.ResumeLayout(false);
+            this.gbNovaFotografija.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilnaStudenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPredmetiStudenta)).EndInit();
-            this.cmsMeni.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,15 +440,28 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtIme;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dgvPredmetiStudenta;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnPrikaziPredmete;
         private System.Windows.Forms.ContextMenuStrip cmsMeni;
         private System.Windows.Forms.ToolStripMenuItem dodajPredmetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pogledajDetaljnoToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog ofdSlika;
+        private System.Windows.Forms.MenuStrip msMeni;
+        private System.Windows.Forms.ToolStripMenuItem licniPodaciToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem prikazPredmetaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem postavkeToolStripMenuItem;
+        private System.Windows.Forms.GroupBox gbPodaci;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox gbNovaFotografija;
+        private System.Windows.Forms.TextBox txtPutanjaDoSlike;
+        private System.Windows.Forms.Button btnChooseFile;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dgvPredmetiStudenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn NazivPredmeta;
         private System.Windows.Forms.DataGridViewTextBoxColumn GodinaStudija;
-        private System.Windows.Forms.OpenFileDialog ofdSlika;
-        private System.Windows.Forms.Button btnSaveChanges;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProsjekOcjena;
+        private System.Windows.Forms.Label lblBrojPolozenih;
     }
 }

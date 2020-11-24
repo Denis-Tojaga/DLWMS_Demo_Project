@@ -73,6 +73,16 @@ namespace DLWMS_Demo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Administrator_logo1 {
+            get {
+                object obj = ResourceManager.GetObject("Administrator_logo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap administrator_slika {
             get {
                 object obj = ResourceManager.GetObject("administrator_slika", resourceCulture);
@@ -86,6 +96,16 @@ namespace DLWMS_Demo.Properties {
         internal static System.Drawing.Bitmap DLWMS_Logo {
             get {
                 object obj = ResourceManager.GetObject("DLWMS_Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SLIKA {
+            get {
+                object obj = ResourceManager.GetObject("SLIKA", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

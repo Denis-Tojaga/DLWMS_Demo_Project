@@ -11,11 +11,11 @@ namespace DLWMS_Demo
         public string NazivPredmeta { get; set; }
         public string GodinaStudija { get; set; }
         public  List<int> OcjenePredmeta { get; set; }
+        public double ProsjekOcjena { get; set; }
 
         public Predmet()
         {
             OcjenePredmeta = new List<int>();
         }
-       
     }
 }

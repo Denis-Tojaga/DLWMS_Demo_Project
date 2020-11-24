@@ -22,10 +22,8 @@ namespace DLWMS_Demo
         private void ModUpravljanja_Load(object sender, EventArgs e)
         {
             InMemoryDB bazaPodataka = new InMemoryDB();
+            btnChangeMod.Hide();
         }
-
-
-
 
 
         /// <summary>
@@ -35,18 +33,24 @@ namespace DLWMS_Demo
         {
             PromjeniBoju(lblStudent,lblAdministrator,pbStudent);
             ModAdministrator = true;
+            PodesiKontrole();
+            btnChangeMod.Show();
+            lblInfoMod.Hide();
         }
         private void pbStudent_Click(object sender, EventArgs e)
         {
             PromjeniBoju(lblAdministrator, lblStudent, pbAdministrator);
             lblLoginMod.Text = "Unesite broj indeksa:";
+            btnChangeMod.Show();
             ModStudent = true;
+            PodesiKontrole();
+            lblInfoMod.Hide();
         }
-
-
-
-
-
+        private void PodesiKontrole()
+        {
+            lblInfoMod.Hide();
+            btnChangeMod.Show();
+        }
 
 
         /// <summary>
@@ -60,9 +64,18 @@ namespace DLWMS_Demo
             labela2.BackColor = Color.White;
             labela2.ForeColor = Color.Black;
         }
-
-
-
+        private void btnChangeMod_Click(object sender, EventArgs e)
+        {
+            lblInfoMod.Show();
+            lblLoginMod.Text = "Username:";
+            pbAdministrator.Show();
+            pbStudent.Show();
+            lblAdministrator.Show();
+            lblStudent.Show();
+            btnChangeMod.Hide();
+            //lblAdministrator.ForeColor = Color.Black;
+            //lblStudent.ForeColor = Color.White;
+        }
 
 
 
@@ -71,24 +84,20 @@ namespace DLWMS_Demo
         /// </summary>
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(ValidirajPolja() && ModStudent)
+            if (ValidirajPolja() && ModStudent)
             {
                 foreach (var student in InMemoryDB.Studenti)
-                {
-                    if(student.BrojIndeksa.Contains(txtUsername.Text) && student.Password.Contains(txtPassword.Text))
+                    if (student.BrojIndeksa.Contains(txtUsername.Text.ToUpper()) && student.Password.Contains(txtPassword.Text))
                     {
                         Hide();
                         frmStudentPodaci formaStudenta = new frmStudentPodaci(student);
                         formaStudenta.ShowDialog();
                         Close();
                     }
-                }
                 MessageBox.Show($"Uneseni podaci nisu validni, pokusajte ponovo!");
                 return;
             }
-
-
-            if(ValidirajPolja() && ModAdministrator)
+            else if (ValidirajPolja() && ModAdministrator)
             {
                 foreach (var profesor in InMemoryDB.Profesori)
                 {
@@ -103,6 +112,8 @@ namespace DLWMS_Demo
                 MessageBox.Show($"Uneseni podaci nisu validni, pokusajte ponovo!");
                 return;
             }
+            else
+                MessageBox.Show($"Molimo odaberite mod u kojem zelite upravljati!");
         }
         private bool ValidirajPolja()
         {

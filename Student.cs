@@ -28,8 +28,13 @@ namespace DLWMS_Demo
             PredmetiStudenta = new List<Predmet>();
             DodajBuiltInPredmete();
             DodajBuiltInOcjene();
+            PostaviProsjekPredmetima();
         }
 
+        /// <summary>
+        /// Dodavanje ugradjenih predmeta prilikom kreiranja studenta,kao i ocjena za taj predmet,za svaki predmet se odmah izracuna prosjek ocjena
+        /// i postavlja u vrijednost propertyja
+        /// </summary>
         private void DodajBuiltInOcjene()
         {
             foreach (var predmet in PredmetiStudenta)
@@ -41,14 +46,13 @@ namespace DLWMS_Demo
                 predmet.OcjenePredmeta.Add(randomOcjena.Next(5, 10));
             }
         }
-
         private void DodajBuiltInPredmete()
         {
             PredmetiStudenta.Add(new Predmet()
             {
                 NazivPredmeta = "Programiranje 2",
                 GodinaStudija="Prva godina",
-                OcjenePredmeta = new List<int>()
+                OcjenePredmeta = new List<int>(),
             });
 
             PredmetiStudenta.Add(new Predmet()
@@ -78,6 +82,20 @@ namespace DLWMS_Demo
                 GodinaStudija = "Treca godina",
                 OcjenePredmeta = new List<int>()
             });
+        }
+        private void PostaviProsjekPredmetima()
+        {
+            foreach (var predmet in PredmetiStudenta)
+                predmet.ProsjekOcjena = IzracunajProsjekOcjena(predmet);
+        }
+        private double IzracunajProsjekOcjena(Predmet predmetStudenta)
+        {
+            double prosjek = 0;
+            if (predmetStudenta.OcjenePredmeta.Count == 0)
+                return prosjek;
+            foreach (var ocjena in predmetStudenta.OcjenePredmeta)
+                prosjek += ocjena;
+            return prosjek / predmetStudenta.OcjenePredmeta.Count;
         }
     }
 }

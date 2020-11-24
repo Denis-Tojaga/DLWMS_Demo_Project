@@ -43,30 +43,63 @@ namespace DLWMS_Demo
         private void frmStudentPodaci_Load(object sender, EventArgs e)
         {
             dgvPredmetiStudenta.Hide();
-            btnSaveChanges.Hide();
+            //btnSaveChanges.Hide();
         }
 
-        private void btnPrikaziPredmete_Click(object sender, EventArgs e)
-        {
-            dgvPredmetiStudenta.Show();
-        }
 
+
+
+        /// <summary>
+        /// Odabir slike iz fajlova i mijenjanje iste studentu
+        /// </summary>
         private void btnChangePhoto_Click(object sender, EventArgs e)
         {
-            if(ofdSlika.ShowDialog() == DialogResult.OK)
+            if(ofdSlika.FileName==txtPutanjaDoSlike.Text)
             {
-                string putanja = ofdSlika.FileName;
-                pbProfilnaStudenta.Image = Image.FromFile(putanja);
-                btnSaveChanges.Show();
+                _student.SlikaStudenta = pbProfilnaStudenta.Image;
+                MessageBox.Show($"Slika uspjesno spasena!");
+            }
+            else
+                MessageBox.Show($"Molimo odaberite sliku iz galerije!");
+        }
+        private void btnChooseFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(ofdSlika.ShowDialog() == DialogResult.OK)
+                {
+                    string putanjaDoFajla = ofdSlika.FileName;
+                    pbProfilnaStudenta.Image = Image.FromFile(putanjaDoFajla);
+                    txtPutanjaDoSlike.Text = putanjaDoFajla;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}");
             }
         }
 
-        private void dgvPredmetiStudenta_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+
+        /// <summary>
+        /// Funckionalnosti menija
+        /// </summary>
+        private void prikazPredmetaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(e.Button == MouseButtons.Right)
-            {
+            dgvPredmetiStudenta.Show();
+            dgvPredmetiStudenta.DataSource = _student.PredmetiStudenta;
+        }
+
+
+
+        private void dgvPredmetiStudenta_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
                 cmsMeni.Show(Cursor.Position);
-            }
+        }
+
+        private void dodajPredmetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

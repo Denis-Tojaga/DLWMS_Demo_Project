@@ -9,3 +9,14 @@ C:\Users\Denis\source\repos\DLWMS_Demo\obj\Debug\DLWMS_Demo.csproj.CoreCompileIn
 C:\Users\Denis\source\repos\DLWMS_Demo\obj\Debug\DLWMS_Demo.exe
 C:\Users\Denis\source\repos\DLWMS_Demo\obj\Debug\DLWMS_Demo.pdb
 C:\Users\Denis\source\repos\DLWMS_Demo\obj\Debug\DLWMS_Demo.frmStudentPodaci.resources
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\bin\Debug\DLWMS_Demo.exe.config
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\bin\Debug\DLWMS_Demo.exe
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\bin\Debug\DLWMS_Demo.pdb
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Debug\DLWMS_Demo.csprojAssemblyReference.cache
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Debug\DLWMS_Demo.frmStudentPodaci.resources
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Debug\DLWMS_Demo.ModUpravljanja.resources
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Debug\DLWMS_Demo.Properties.Resources.resources
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Debug\DLWMS_Demo.csproj.GenerateResource.cache
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Debug\DLWMS_Demo.csproj.CoreCompileInputs.cache
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Debug\DLWMS_Demo.exe
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Debug\DLWMS_Demo.pdb

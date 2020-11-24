@@ -102,6 +102,7 @@
     <None Include="Resources\Student_logo.png" />
     <None Include="Resources\Administrator_logo.jpg" />
     <None Include="Resources\DLWMS_Logo.jpg" />
+    <None Include="Resources\SLIKA.png" />
     <Content Include="Student_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
