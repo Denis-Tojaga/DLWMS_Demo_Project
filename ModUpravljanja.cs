@@ -86,19 +86,31 @@ namespace DLWMS_Demo
         {
             if (ValidirajPolja() && ModStudent)
             {
-                foreach (var student in InMemoryDB.Studenti)
-                    if (student.BrojIndeksa.Contains(txtUsername.Text.ToUpper()) && student.Password.Contains(txtPassword.Text))
-                    {
-                        Hide();
-                        frmStudentPodaci formaStudenta = new frmStudentPodaci(student);
-                        if(formaStudenta.ShowDialog() == DialogResult.OK)
-                        {
-                            //Show();
-                            //return;
-                        }
-                    }
-                MessageBox.Show($"Uneseni podaci nisu validni, pokusajte ponovo!");
-                return;
+
+                var logiraniStudent = InMemoryDB.Studenti.Where(x => x.BrojIndeksa.Contains(txtUsername.Text.ToUpper()) || x.Password.Contains(txtPassword.Text)) as Student;
+                if (logiraniStudent == null)
+                {
+                    MessageBox.Show($"Uneseni podaci nisu validni, pokusajte ponovo!");
+                    return;
+                }
+                else
+                {
+                    Hide();
+                    frmStudentPodaci formaLogiranogStudenta = new frmStudentPodaci(logiraniStudent);
+                    if (formaLogiranogStudenta.ShowDialog() == DialogResult.OK)
+                        Show();
+                }
+                //foreach (var student in InMemoryDB.Studenti)
+                //    if (student.BrojIndeksa.Contains(txtUsername.Text.ToUpper()) && student.Password.Contains(txtPassword.Text))
+                //    {
+                //        Hide();
+                //        frmStudentPodaci formaStudenta = new frmStudentPodaci(student);
+                //        if(formaStudenta.ShowDialog() == DialogResult.OK)
+                //        {
+                //            //Show();
+                //            //return;
+                //        }
+                //    }
             }
             else if (ValidirajPolja() && ModAdministrator)
             {

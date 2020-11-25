@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudentPodaci));
             this.btnChangePhoto = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBrojIndeksa = new System.Windows.Forms.TextBox();
@@ -450,6 +451,7 @@
             this.Controls.Add(this.msMeni);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.msMeni;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmStudentPodaci";

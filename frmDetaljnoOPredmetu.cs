@@ -16,7 +16,6 @@ namespace DLWMS_Demo
         public frmDetaljnoOPredmetu()
         {
             InitializeComponent();
-            dgvOcjenePredmeta.AutoGenerateColumns = false;
             _predmet = new Predmet();
         }
 
@@ -40,8 +39,7 @@ namespace DLWMS_Demo
             lblPredavac.Text = predmet.PredavacPredmeta.ToString();
             lblBrojSati.Text = predmet.BrojSati.ToString();
             lblECTS.Text = predmet.ECTS.ToString();
-            
-            //dgvOcjenePredmeta.DataSource = listaInToString;
+            lblOcjena.Text = predmet.OcjenaPredmeta.ToString();
         }
 
         private void btnGoBack_Click(object sender, EventArgs e)

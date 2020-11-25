@@ -58,9 +58,8 @@ namespace DLWMS_Demo
             txtPrezime.Enabled = false;
             txtEmail.Enabled = false;
             btnChangePhoto.Enabled = false;
+            btnSaveChanges.Hide();
         }
-
-
 
 
 
@@ -105,6 +104,11 @@ namespace DLWMS_Demo
         /// </summary>
         private void prikazPredmetaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            UcitajPodatkeOPredmetima();
+        }
+
+        private void UcitajPodatkeOPredmetima()
+        {
             lblBrojPolozenih.Show();
             lblBrojPolozenih.Text += _student.BrojPolozenih.ToString();
             dgvPredmetiStudenta.Show();
@@ -141,8 +145,13 @@ namespace DLWMS_Demo
             txtPrezime.Enabled = true;
             txtEmail.Enabled = true;
             btnChangePhoto.Enabled = true;
+            btnSaveChanges.Show();
         }
 
+
+        /// <summary>
+        /// Validacija uredjenih polja i spasavanje vrijednost u studenta koji se prikazuje
+        /// </summary>
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
             if (ValidacijaPolja())
@@ -156,7 +165,6 @@ namespace DLWMS_Demo
             }else
                 MessageBox.Show($"Podaci nisu azurirani,doslo je do greske!", "Edit mode unsuccessfull");
         }
-
         private bool ValidacijaPolja()
         {
             return Validator.ValidirajPolje(txtBrojIndeksa, err2, "This field is required!") &&
@@ -165,7 +173,6 @@ namespace DLWMS_Demo
                 Validator.ValidirajPolje(txtEmail, err2, "This field is required!") &&
                 Validator.ValidirajPolje(pbProfilnaStudenta, err2, "This field is required!");
         }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
