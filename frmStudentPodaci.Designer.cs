@@ -200,8 +200,8 @@
             this.postavkeToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.postavkeToolStripMenuItem.CheckOnClick = true;
             this.postavkeToolStripMenuItem.Name = "postavkeToolStripMenuItem";
-            this.postavkeToolStripMenuItem.Size = new System.Drawing.Size(96, 27);
-            this.postavkeToolStripMenuItem.Text = "Postavke";
+            this.postavkeToolStripMenuItem.Size = new System.Drawing.Size(162, 27);
+            this.postavkeToolStripMenuItem.Text = "Prikazi Predmete";
             // 
             // urediPodatkeToolStripMenuItem
             // 

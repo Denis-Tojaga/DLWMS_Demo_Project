@@ -48,10 +48,10 @@ namespace DLWMS_Demo
         {
             dgvPredmetiStudenta.Hide();
             lblBrojPolozenih.Hide();
-            OnemoguceBoxove();
+            OnemoguciBoxove();
         }
 
-        private void OnemoguceBoxove()
+        private void OnemoguciBoxove()
         {
             txtBrojIndeksa.Enabled = false;
             txtIme.Enabled = false;
@@ -161,7 +161,7 @@ namespace DLWMS_Demo
                 _student.Prezime = txtPrezime.Text;
                 _student.Email = txtEmail.Text;
                 MessageBox.Show($"Podaci uspjesno azurirani!","Edit mode successfull");
-                btnSaveChanges.Hide();
+                OnemoguciBoxove();
             }else
                 MessageBox.Show($"Podaci nisu azurirani,doslo je do greske!", "Edit mode unsuccessfull");
         }

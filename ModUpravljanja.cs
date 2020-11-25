@@ -86,9 +86,16 @@ namespace DLWMS_Demo
         {
             if (ValidirajPolja() && ModStudent)
             {
+                bool pronadjen = false;
+                Student logiraniStudent = null;
 
-                var logiraniStudent = InMemoryDB.Studenti.Where(x => x.BrojIndeksa.Contains(txtUsername.Text.ToUpper()) || x.Password.Contains(txtPassword.Text)) as Student;
-                if (logiraniStudent == null)
+                foreach (var student in InMemoryDB.Studenti)
+                    if (student.BrojIndeksa.Contains(txtUsername.Text.ToUpper()) && student.Password.Contains(txtPassword.Text))
+                    {
+                        pronadjen = true;
+                        logiraniStudent = student;
+                    }
+                if(!pronadjen)
                 {
                     MessageBox.Show($"Uneseni podaci nisu validni, pokusajte ponovo!");
                     return;
@@ -100,17 +107,6 @@ namespace DLWMS_Demo
                     if (formaLogiranogStudenta.ShowDialog() == DialogResult.OK)
                         Show();
                 }
-                //foreach (var student in InMemoryDB.Studenti)
-                //    if (student.BrojIndeksa.Contains(txtUsername.Text.ToUpper()) && student.Password.Contains(txtPassword.Text))
-                //    {
-                //        Hide();
-                //        frmStudentPodaci formaStudenta = new frmStudentPodaci(student);
-                //        if(formaStudenta.ShowDialog() == DialogResult.OK)
-                //        {
-                //            //Show();
-                //            //return;
-                //        }
-                //    }
             }
             else if (ValidirajPolja() && ModAdministrator)
             {
