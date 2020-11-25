@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModUpravljanja));
             this.label1 = new System.Windows.Forms.Label();
             this.lblInfoMod = new System.Windows.Forms.Label();
             this.lblAdministrator = new System.Windows.Forms.Label();
@@ -208,7 +207,6 @@
             this.Controls.Add(this.lblInfoMod);
             this.Controls.Add(this.pbDLWMS_logo);
             this.Controls.Add(this.label1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModUpravljanja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Odaberite mod upravljanja";

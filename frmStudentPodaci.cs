@@ -50,14 +50,14 @@ namespace DLWMS_Demo
             lblBrojPolozenih.Hide();
             OnemoguciBoxove();
         }
-
         private void OnemoguciBoxove()
         {
+            btnChooseFile.Enabled = false;
+            btnChangePhoto.Enabled = false;
             txtBrojIndeksa.Enabled = false;
             txtIme.Enabled = false;
             txtPrezime.Enabled = false;
             txtEmail.Enabled = false;
-            btnChangePhoto.Enabled = false;
             btnSaveChanges.Hide();
         }
 
@@ -102,17 +102,17 @@ namespace DLWMS_Demo
         /// <summary>
         /// Funckionalnosti menija
         /// </summary>
-        private void prikazPredmetaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void postavkeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UcitajPodatkeOPredmetima();
         }
 
         private void UcitajPodatkeOPredmetima()
         {
-            lblBrojPolozenih.Show();
-            lblBrojPolozenih.Text += _student.BrojPolozenih.ToString();
             dgvPredmetiStudenta.Show();
             dgvPredmetiStudenta.DataSource = _student.PredmetiStudenta;
+            lblBrojPolozenih.Show();
+            lblBrojPolozenih.Text += _student.BrojPolozenih.ToString();
         }
 
 
@@ -140,11 +140,12 @@ namespace DLWMS_Demo
         }
         private void OmoguciBoxove()
         {
+            btnChooseFile.Enabled = true;
+            btnChangePhoto.Enabled = true;
             txtBrojIndeksa.Enabled = true;
             txtIme.Enabled = true;
             txtPrezime.Enabled = true;
             txtEmail.Enabled = true;
-            btnChangePhoto.Enabled = true;
             btnSaveChanges.Show();
         }
 
@@ -177,5 +178,6 @@ namespace DLWMS_Demo
         {
             DialogResult = DialogResult.OK;
         }
+
     }
 }
