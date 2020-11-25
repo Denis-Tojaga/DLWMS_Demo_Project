@@ -91,8 +91,11 @@ namespace DLWMS_Demo
                     {
                         Hide();
                         frmStudentPodaci formaStudenta = new frmStudentPodaci(student);
-                        formaStudenta.ShowDialog();
-                        Close();
+                        if(formaStudenta.ShowDialog() == DialogResult.OK)
+                        {
+                            //Show();
+                            //return;
+                        }
                     }
                 MessageBox.Show($"Uneseni podaci nisu validni, pokusajte ponovo!");
                 return;

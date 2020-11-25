@@ -14,15 +14,12 @@ namespace DLWMS_Demo
         public string BrojIndeksa { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
-
         public DateTime DatumRodjenja { get; set; }
-
         public string Email { get; set; }
-
         public Image SlikaStudenta { get; set; }
-
         public string Password { get; set; }
         public  double  ProsjekOcjena { get; set; }
+        public int  BrojPolozenih { get; set; }
 
         public Student()
         {
@@ -30,6 +27,15 @@ namespace DLWMS_Demo
             DodajBuiltInPredmete();
             DodajBuiltInOcjeneStudentu();
             ProsjekOcjena=PostaviProsjekStudentu();
+            BrojPolozenih = PrebrojPolozene();
+        }
+        private int PrebrojPolozene()
+        {
+            int brojac = 0;
+            foreach (var predmet in PredmetiStudenta)
+                if (predmet.OcjenaPredmeta > 5)
+                    brojac++;
+            return brojac;
         }
 
         /// <summary>
@@ -52,7 +58,7 @@ namespace DLWMS_Demo
             if (PredmetiStudenta.Count == 0)
                 return ProsjekStudenta;
             foreach (var predmet in PredmetiStudenta)
-                predmet.OcjenaPredmeta += predmet.OcjenaPredmeta;
+                ProsjekStudenta += predmet.OcjenaPredmeta;
             return ProsjekStudenta / PredmetiStudenta.Count;
         }
     }

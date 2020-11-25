@@ -42,12 +42,16 @@
             this.checkDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ofdSlika = new System.Windows.Forms.OpenFileDialog();
             this.msMeni = new System.Windows.Forms.MenuStrip();
-            this.licniPodaciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.prikazPredmetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.postavkeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.urediPodatkeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbPodaci = new System.Windows.Forms.GroupBox();
+            this.btnSaveChanges = new System.Windows.Forms.Button();
             this.lblBrojPolozenih = new System.Windows.Forms.Label();
             this.dgvPredmetiStudenta = new System.Windows.Forms.DataGridView();
+            this.NazivPredmeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Profesor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GodinaStudija = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ocjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -59,16 +63,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.NazivPredmeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Profesor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GodinaStudija = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ocjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.err2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnBack = new System.Windows.Forms.Button();
             this.cmsMeni.SuspendLayout();
             this.msMeni.SuspendLayout();
             this.gbPodaci.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPredmetiStudenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilnaStudenta)).BeginInit();
             this.gbNovaFotografija.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.err2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnChangePhoto
@@ -183,28 +186,13 @@
             // 
             this.msMeni.Font = new System.Drawing.Font("Zilla Slab", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msMeni.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.licniPodaciToolStripMenuItem,
-            this.prikazPredmetaToolStripMenuItem,
-            this.postavkeToolStripMenuItem});
+            this.postavkeToolStripMenuItem,
+            this.urediPodatkeToolStripMenuItem});
             this.msMeni.Location = new System.Drawing.Point(0, 0);
             this.msMeni.Name = "msMeni";
             this.msMeni.Size = new System.Drawing.Size(1075, 31);
             this.msMeni.TabIndex = 16;
             this.msMeni.Text = "menuStrip1";
-            // 
-            // licniPodaciToolStripMenuItem
-            // 
-            this.licniPodaciToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.licniPodaciToolStripMenuItem.Name = "licniPodaciToolStripMenuItem";
-            this.licniPodaciToolStripMenuItem.Size = new System.Drawing.Size(119, 27);
-            this.licniPodaciToolStripMenuItem.Text = "Licni podaci";
-            // 
-            // prikazPredmetaToolStripMenuItem
-            // 
-            this.prikazPredmetaToolStripMenuItem.Name = "prikazPredmetaToolStripMenuItem";
-            this.prikazPredmetaToolStripMenuItem.Size = new System.Drawing.Size(157, 27);
-            this.prikazPredmetaToolStripMenuItem.Text = "Prikaz Predmeta";
-            this.prikazPredmetaToolStripMenuItem.Click += new System.EventHandler(this.prikazPredmetaToolStripMenuItem_Click);
             // 
             // postavkeToolStripMenuItem
             // 
@@ -214,9 +202,17 @@
             this.postavkeToolStripMenuItem.Size = new System.Drawing.Size(96, 27);
             this.postavkeToolStripMenuItem.Text = "Postavke";
             // 
+            // urediPodatkeToolStripMenuItem
+            // 
+            this.urediPodatkeToolStripMenuItem.Name = "urediPodatkeToolStripMenuItem";
+            this.urediPodatkeToolStripMenuItem.Size = new System.Drawing.Size(137, 27);
+            this.urediPodatkeToolStripMenuItem.Text = "Uredi podatke";
+            this.urediPodatkeToolStripMenuItem.Click += new System.EventHandler(this.urediPodatkeToolStripMenuItem_Click);
+            // 
             // gbPodaci
             // 
             this.gbPodaci.BackColor = System.Drawing.Color.Gainsboro;
+            this.gbPodaci.Controls.Add(this.btnSaveChanges);
             this.gbPodaci.Controls.Add(this.lblBrojPolozenih);
             this.gbPodaci.Controls.Add(this.dgvPredmetiStudenta);
             this.gbPodaci.Controls.Add(this.label11);
@@ -232,17 +228,30 @@
             this.gbPodaci.Controls.Add(this.label4);
             this.gbPodaci.Controls.Add(this.label3);
             this.gbPodaci.Controls.Add(this.txtIme);
-            this.gbPodaci.Location = new System.Drawing.Point(48, 60);
+            this.gbPodaci.Location = new System.Drawing.Point(48, 71);
             this.gbPodaci.Name = "gbPodaci";
-            this.gbPodaci.Size = new System.Drawing.Size(989, 404);
+            this.gbPodaci.Size = new System.Drawing.Size(989, 405);
             this.gbPodaci.TabIndex = 17;
             this.gbPodaci.TabStop = false;
+            // 
+            // btnSaveChanges
+            // 
+            this.btnSaveChanges.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSaveChanges.Font = new System.Drawing.Font("Zilla Slab SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveChanges.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSaveChanges.Location = new System.Drawing.Point(780, 364);
+            this.btnSaveChanges.Name = "btnSaveChanges";
+            this.btnSaveChanges.Size = new System.Drawing.Size(140, 31);
+            this.btnSaveChanges.TabIndex = 22;
+            this.btnSaveChanges.Text = "Spasi promjene";
+            this.btnSaveChanges.UseVisualStyleBackColor = false;
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // lblBrojPolozenih
             // 
             this.lblBrojPolozenih.AutoSize = true;
             this.lblBrojPolozenih.Font = new System.Drawing.Font("Zilla Slab", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBrojPolozenih.Location = new System.Drawing.Point(674, 371);
+            this.lblBrojPolozenih.Location = new System.Drawing.Point(275, 372);
             this.lblBrojPolozenih.Name = "lblBrojPolozenih";
             this.lblBrojPolozenih.Size = new System.Drawing.Size(226, 22);
             this.lblBrojPolozenih.TabIndex = 21;
@@ -265,6 +274,38 @@
             this.dgvPredmetiStudenta.Size = new System.Drawing.Size(641, 226);
             this.dgvPredmetiStudenta.TabIndex = 20;
             this.dgvPredmetiStudenta.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvPredmetiStudenta_MouseClick);
+            // 
+            // NazivPredmeta
+            // 
+            this.NazivPredmeta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NazivPredmeta.DataPropertyName = "NazivPredmeta";
+            this.NazivPredmeta.HeaderText = "NazivPredmeta";
+            this.NazivPredmeta.Name = "NazivPredmeta";
+            this.NazivPredmeta.ReadOnly = true;
+            // 
+            // Profesor
+            // 
+            this.Profesor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Profesor.DataPropertyName = "PredavacPredmeta";
+            this.Profesor.HeaderText = "Profesor";
+            this.Profesor.Name = "Profesor";
+            this.Profesor.ReadOnly = true;
+            // 
+            // GodinaStudija
+            // 
+            this.GodinaStudija.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GodinaStudija.DataPropertyName = "GodinaStudija";
+            this.GodinaStudija.HeaderText = "Godina studija";
+            this.GodinaStudija.Name = "GodinaStudija";
+            this.GodinaStudija.ReadOnly = true;
+            // 
+            // Ocjena
+            // 
+            this.Ocjena.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ocjena.DataPropertyName = "OcjenaPredmeta";
+            this.Ocjena.HeaderText = "Ocjena";
+            this.Ocjena.Name = "Ocjena";
+            this.Ocjena.ReadOnly = true;
             // 
             // label11
             // 
@@ -380,37 +421,22 @@
             this.label6.Size = new System.Drawing.Size(977, 1);
             this.label6.TabIndex = 0;
             // 
-            // NazivPredmeta
+            // err2
             // 
-            this.NazivPredmeta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NazivPredmeta.DataPropertyName = "NazivPredmeta";
-            this.NazivPredmeta.HeaderText = "NazivPredmeta";
-            this.NazivPredmeta.Name = "NazivPredmeta";
-            this.NazivPredmeta.ReadOnly = true;
+            this.err2.ContainerControl = this;
             // 
-            // Profesor
+            // btnBack
             // 
-            this.Profesor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Profesor.DataPropertyName = "PredavacPredmeta";
-            this.Profesor.HeaderText = "Profesor";
-            this.Profesor.Name = "Profesor";
-            this.Profesor.ReadOnly = true;
-            // 
-            // GodinaStudija
-            // 
-            this.GodinaStudija.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GodinaStudija.DataPropertyName = "GodinaStudija";
-            this.GodinaStudija.HeaderText = "Godina studija";
-            this.GodinaStudija.Name = "GodinaStudija";
-            this.GodinaStudija.ReadOnly = true;
-            // 
-            // Ocjena
-            // 
-            this.Ocjena.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ocjena.DataPropertyName = "OcjenaPredmeta";
-            this.Ocjena.HeaderText = "Ocjena";
-            this.Ocjena.Name = "Ocjena";
-            this.Ocjena.ReadOnly = true;
+            this.btnBack.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnBack.Font = new System.Drawing.Font("Zilla Slab SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(12, 34);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(65, 30);
+            this.btnBack.TabIndex = 19;
+            this.btnBack.Text = "<<Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // frmStudentPodaci
             // 
@@ -418,6 +444,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1075, 606);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.gbNovaFotografija);
             this.Controls.Add(this.gbPodaci);
             this.Controls.Add(this.msMeni);
@@ -437,6 +464,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilnaStudenta)).EndInit();
             this.gbNovaFotografija.ResumeLayout(false);
             this.gbNovaFotografija.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.err2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -456,8 +484,6 @@
         private System.Windows.Forms.ContextMenuStrip cmsMeni;
         private System.Windows.Forms.OpenFileDialog ofdSlika;
         private System.Windows.Forms.MenuStrip msMeni;
-        private System.Windows.Forms.ToolStripMenuItem licniPodaciToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem prikazPredmetaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem postavkeToolStripMenuItem;
         private System.Windows.Forms.GroupBox gbPodaci;
         private System.Windows.Forms.Label label9;
@@ -477,5 +503,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Profesor;
         private System.Windows.Forms.DataGridViewTextBoxColumn GodinaStudija;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ocjena;
+        private System.Windows.Forms.ToolStripMenuItem urediPodatkeToolStripMenuItem;
+        private System.Windows.Forms.Button btnSaveChanges;
+        private System.Windows.Forms.ErrorProvider err2;
+        private System.Windows.Forms.Button btnBack;
     }
 }

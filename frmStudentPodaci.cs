@@ -47,6 +47,17 @@ namespace DLWMS_Demo
         private void frmStudentPodaci_Load(object sender, EventArgs e)
         {
             dgvPredmetiStudenta.Hide();
+            lblBrojPolozenih.Hide();
+            OnemoguceBoxove();
+        }
+
+        private void OnemoguceBoxove()
+        {
+            txtBrojIndeksa.Enabled = false;
+            txtIme.Enabled = false;
+            txtPrezime.Enabled = false;
+            txtEmail.Enabled = false;
+            btnChangePhoto.Enabled = false;
         }
 
 
@@ -94,6 +105,8 @@ namespace DLWMS_Demo
         /// </summary>
         private void prikazPredmetaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            lblBrojPolozenih.Show();
+            lblBrojPolozenih.Text += _student.BrojPolozenih.ToString();
             dgvPredmetiStudenta.Show();
             dgvPredmetiStudenta.DataSource = _student.PredmetiStudenta;
         }
@@ -116,6 +129,46 @@ namespace DLWMS_Demo
             frmDetaljnoOPredmetu detaljiPredmeta = new frmDetaljnoOPredmetu(kliknutiPredmet);
             if (detaljiPredmeta.ShowDialog() == DialogResult.OK)
                 Show();
+        }
+        private void urediPodatkeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OmoguciBoxove();
+        }
+        private void OmoguciBoxove()
+        {
+            txtBrojIndeksa.Enabled = true;
+            txtIme.Enabled = true;
+            txtPrezime.Enabled = true;
+            txtEmail.Enabled = true;
+            btnChangePhoto.Enabled = true;
+        }
+
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            if (ValidacijaPolja())
+            {
+                _student.BrojIndeksa = txtBrojIndeksa.Text;
+                _student.Ime = txtIme.Text;
+                _student.Prezime = txtPrezime.Text;
+                _student.Email = txtEmail.Text;
+                MessageBox.Show($"Podaci uspjesno azurirani!","Edit mode successfull");
+                btnSaveChanges.Hide();
+            }else
+                MessageBox.Show($"Podaci nisu azurirani,doslo je do greske!", "Edit mode unsuccessfull");
+        }
+
+        private bool ValidacijaPolja()
+        {
+            return Validator.ValidirajPolje(txtBrojIndeksa, err2, "This field is required!") &&
+                Validator.ValidirajPolje(txtIme, err2, "This field is required!") &&
+                Validator.ValidirajPolje(txtPrezime, err2, "This field is required!") &&
+                Validator.ValidirajPolje(txtEmail, err2, "This field is required!") &&
+                Validator.ValidirajPolje(pbProfilnaStudenta, err2, "This field is required!");
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
         }
     }
 }
