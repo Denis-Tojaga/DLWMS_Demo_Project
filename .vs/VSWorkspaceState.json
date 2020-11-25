@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\bin",
+    "\\obj",
+    "\\obj\\Debug\\TempPE"
   ],
+  "SelectedNode": "\\frmStudentPodaci.cs",
   "PreviewInSolutionExplorer": false
 }

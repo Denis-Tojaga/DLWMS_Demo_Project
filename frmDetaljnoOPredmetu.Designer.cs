@@ -75,7 +75,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(256, 125);
+            this.label4.Location = new System.Drawing.Point(276, 125);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 19);
             this.label4.TabIndex = 3;
@@ -85,7 +85,7 @@
             // 
             this.lblNazivPredmeta.AutoSize = true;
             this.lblNazivPredmeta.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNazivPredmeta.Location = new System.Drawing.Point(134, 59);
+            this.lblNazivPredmeta.Location = new System.Drawing.Point(143, 59);
             this.lblNazivPredmeta.Name = "lblNazivPredmeta";
             this.lblNazivPredmeta.Size = new System.Drawing.Size(52, 19);
             this.lblNazivPredmeta.TabIndex = 4;
@@ -105,7 +105,7 @@
             // 
             this.lblECTS.AutoSize = true;
             this.lblECTS.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblECTS.Location = new System.Drawing.Point(305, 125);
+            this.lblECTS.Location = new System.Drawing.Point(325, 125);
             this.lblECTS.Name = "lblECTS";
             this.lblECTS.Size = new System.Drawing.Size(52, 19);
             this.lblECTS.TabIndex = 6;
@@ -115,7 +115,7 @@
             // 
             this.lblBrojSati.AutoSize = true;
             this.lblBrojSati.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBrojSati.Location = new System.Drawing.Point(93, 125);
+            this.lblBrojSati.Location = new System.Drawing.Point(84, 125);
             this.lblBrojSati.Name = "lblBrojSati";
             this.lblBrojSati.Size = new System.Drawing.Size(53, 19);
             this.lblBrojSati.TabIndex = 7;
@@ -139,7 +139,7 @@
             // 
             this.lblOcjena.AutoSize = true;
             this.lblOcjena.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOcjena.Location = new System.Drawing.Point(75, 155);
+            this.lblOcjena.Location = new System.Drawing.Point(207, 125);
             this.lblOcjena.Name = "lblOcjena";
             this.lblOcjena.Size = new System.Drawing.Size(52, 19);
             this.lblOcjena.TabIndex = 12;
@@ -149,7 +149,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 155);
+            this.label6.Location = new System.Drawing.Point(148, 125);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 19);
             this.label6.TabIndex = 11;
@@ -159,7 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 200);
+            this.ClientSize = new System.Drawing.Size(389, 160);
             this.ControlBox = false;
             this.Controls.Add(this.lblOcjena);
             this.Controls.Add(this.label6);

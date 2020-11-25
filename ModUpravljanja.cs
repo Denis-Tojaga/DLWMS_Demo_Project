@@ -73,8 +73,6 @@ namespace DLWMS_Demo
             lblAdministrator.Show();
             lblStudent.Show();
             btnChangeMod.Hide();
-            //lblAdministrator.ForeColor = Color.Black;
-            //lblStudent.ForeColor = Color.White;
         }
 
 
@@ -90,7 +88,7 @@ namespace DLWMS_Demo
                 Student logiraniStudent = null;
 
                 foreach (var student in InMemoryDB.Studenti)
-                    if (student.BrojIndeksa.Contains(txtUsername.Text.ToUpper()) && student.Password.Contains(txtPassword.Text))
+                    if (student.BrojIndeksa==txtUsername.Text.ToUpper() && student.Password==txtPassword.Text.ToUpper())
                     {
                         pronadjen = true;
                         logiraniStudent = student;

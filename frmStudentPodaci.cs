@@ -72,7 +72,7 @@ namespace DLWMS_Demo
         {
             if(ofdSlika.FileName==txtPutanjaDoSlike.Text)
             {
-                _student.SlikaStudenta = pbProfilnaStudenta.Image;
+                pbProfilnaStudenta.Image = Image.FromFile(ofdSlika.FileName);
                 MessageBox.Show($"Slika uspjesno spasena!");
             }
             else
@@ -161,6 +161,8 @@ namespace DLWMS_Demo
                 _student.Ime = txtIme.Text;
                 _student.Prezime = txtPrezime.Text;
                 _student.Email = txtEmail.Text;
+                if(pbProfilnaStudenta.Image!=null)
+                _student.SlikaStudenta = pbProfilnaStudenta.Image;
                 MessageBox.Show($"Podaci uspjesno azurirani!","Edit mode successfull");
                 OnemoguciBoxove();
             }else

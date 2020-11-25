@@ -1,0 +1,13 @@
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\bin\Release\DLWMS_Demo.exe.config
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\bin\Release\DLWMS_Demo.exe
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\bin\Release\DLWMS_Demo.pdb
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Release\DLWMS_Demo.csprojAssemblyReference.cache
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Release\DLWMS_Demo.frmAddPredmet.resources
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Release\DLWMS_Demo.frmDetaljnoOPredmetu.resources
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Release\DLWMS_Demo.frmStudentPodaci.resources
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Release\DLWMS_Demo.ModUpravljanja.resources
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Release\DLWMS_Demo.Properties.Resources.resources
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Release\DLWMS_Demo.csproj.GenerateResource.cache
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Release\DLWMS_Demo.csproj.CoreCompileInputs.cache
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Release\DLWMS_Demo.exe
+C:\Users\Denis\Documents\GitHub\DLWMS_Demo_Project\obj\Release\DLWMS_Demo.pdb
