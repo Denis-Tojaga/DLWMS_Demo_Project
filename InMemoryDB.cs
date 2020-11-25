@@ -10,7 +10,6 @@ namespace DLWMS_Demo
     {
         public static List<Student> Studenti { get; set; }
         public static List<Profesor> Profesori { get; set; }
-
         public static List<Predmet> Predmeti { get; set; }
 
         public InMemoryDB()
@@ -99,8 +98,8 @@ namespace DLWMS_Demo
             {
                 NazivPredmeta = "Programiranje 2",
                 GodinaStudija = "Prva godina",
-                ECTS=7,
-                BrojSati=120
+                ECTS = 7,
+                BrojSati = 120
             });
 
             Predmeti.Add(new Predmet()

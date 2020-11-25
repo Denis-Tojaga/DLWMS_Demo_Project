@@ -44,7 +44,6 @@ namespace DLWMS_Demo
             }else
                 MessageBox.Show($"Nije moguce ucitati podatke,student nije pronadjen!");
         }
-
         private void frmStudentPodaci_Load(object sender, EventArgs e)
         {
             dgvPredmetiStudenta.Hide();
@@ -87,6 +86,9 @@ namespace DLWMS_Demo
         }
 
 
+
+
+
         /// <summary>
         /// Funckionalnosti menija
         /// </summary>
@@ -95,6 +97,9 @@ namespace DLWMS_Demo
             dgvPredmetiStudenta.Show();
             dgvPredmetiStudenta.DataSource = _student.PredmetiStudenta;
         }
+
+
+
 
 
         /// <summary>

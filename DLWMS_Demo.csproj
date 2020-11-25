@@ -114,7 +114,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Administrator_logo.jpg" />
-    <None Include="administrator_slika.jpg" />
     <Content Include="DLWMS_Logo.jpg" />
     <Content Include="FIT_logo.png" />
     <None Include="Resources\Student_logo.png" />

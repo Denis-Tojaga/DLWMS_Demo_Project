@@ -83,16 +83,6 @@ namespace DLWMS_Demo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap administrator_slika {
-            get {
-                object obj = ResourceManager.GetObject("administrator_slika", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap DLWMS_Logo {
             get {
                 object obj = ResourceManager.GetObject("DLWMS_Logo", resourceCulture);

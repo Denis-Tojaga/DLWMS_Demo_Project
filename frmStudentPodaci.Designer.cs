@@ -39,36 +39,36 @@
             this.txtIme = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmsMeni = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.checkDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ofdSlika = new System.Windows.Forms.OpenFileDialog();
             this.msMeni = new System.Windows.Forms.MenuStrip();
             this.licniPodaciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prikazPredmetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.postavkeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbPodaci = new System.Windows.Forms.GroupBox();
+            this.lblBrojPolozenih = new System.Windows.Forms.Label();
+            this.dgvPredmetiStudenta = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.pbProfilnaStudenta = new System.Windows.Forms.PictureBox();
             this.gbNovaFotografija = new System.Windows.Forms.GroupBox();
             this.txtPutanjaDoSlike = new System.Windows.Forms.TextBox();
             this.btnChooseFile = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dgvPredmetiStudenta = new System.Windows.Forms.DataGridView();
-            this.lblBrojPolozenih = new System.Windows.Forms.Label();
-            this.checkDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pbProfilnaStudenta = new System.Windows.Forms.PictureBox();
             this.NazivPredmeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Profesor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GodinaStudija = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProsjekOcjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ocjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmsMeni.SuspendLayout();
             this.msMeni.SuspendLayout();
             this.gbPodaci.SuspendLayout();
-            this.gbNovaFotografija.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPredmetiStudenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilnaStudenta)).BeginInit();
+            this.gbNovaFotografija.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnChangePhoto
@@ -168,6 +168,13 @@
             this.cmsMeni.Name = "cmsMeni";
             this.cmsMeni.Size = new System.Drawing.Size(146, 26);
             // 
+            // checkDetailsToolStripMenuItem
+            // 
+            this.checkDetailsToolStripMenuItem.Name = "checkDetailsToolStripMenuItem";
+            this.checkDetailsToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.checkDetailsToolStripMenuItem.Text = "Check Details";
+            this.checkDetailsToolStripMenuItem.Click += new System.EventHandler(this.checkDetailsToolStripMenuItem_Click);
+            // 
             // ofdSlika
             // 
             this.ofdSlika.FileName = "openFileDialog1";
@@ -231,6 +238,34 @@
             this.gbPodaci.TabIndex = 17;
             this.gbPodaci.TabStop = false;
             // 
+            // lblBrojPolozenih
+            // 
+            this.lblBrojPolozenih.AutoSize = true;
+            this.lblBrojPolozenih.Font = new System.Drawing.Font("Zilla Slab", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBrojPolozenih.Location = new System.Drawing.Point(674, 371);
+            this.lblBrojPolozenih.Name = "lblBrojPolozenih";
+            this.lblBrojPolozenih.Size = new System.Drawing.Size(226, 22);
+            this.lblBrojPolozenih.TabIndex = 21;
+            this.lblBrojPolozenih.Text = "Broj polozenih predmeta je: ";
+            // 
+            // dgvPredmetiStudenta
+            // 
+            this.dgvPredmetiStudenta.AllowUserToAddRows = false;
+            this.dgvPredmetiStudenta.AllowUserToDeleteRows = false;
+            this.dgvPredmetiStudenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPredmetiStudenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NazivPredmeta,
+            this.Profesor,
+            this.GodinaStudija,
+            this.Ocjena});
+            this.dgvPredmetiStudenta.Location = new System.Drawing.Point(279, 135);
+            this.dgvPredmetiStudenta.Name = "dgvPredmetiStudenta";
+            this.dgvPredmetiStudenta.ReadOnly = true;
+            this.dgvPredmetiStudenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPredmetiStudenta.Size = new System.Drawing.Size(641, 226);
+            this.dgvPredmetiStudenta.TabIndex = 20;
+            this.dgvPredmetiStudenta.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvPredmetiStudenta_MouseClick);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -269,6 +304,16 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(977, 1);
             this.label10.TabIndex = 16;
+            // 
+            // pbProfilnaStudenta
+            // 
+            this.pbProfilnaStudenta.Location = new System.Drawing.Point(36, 61);
+            this.pbProfilnaStudenta.Margin = new System.Windows.Forms.Padding(4);
+            this.pbProfilnaStudenta.Name = "pbProfilnaStudenta";
+            this.pbProfilnaStudenta.Size = new System.Drawing.Size(183, 217);
+            this.pbProfilnaStudenta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbProfilnaStudenta.TabIndex = 1;
+            this.pbProfilnaStudenta.TabStop = false;
             // 
             // gbNovaFotografija
             // 
@@ -335,51 +380,6 @@
             this.label6.Size = new System.Drawing.Size(977, 1);
             this.label6.TabIndex = 0;
             // 
-            // dgvPredmetiStudenta
-            // 
-            this.dgvPredmetiStudenta.AllowUserToAddRows = false;
-            this.dgvPredmetiStudenta.AllowUserToDeleteRows = false;
-            this.dgvPredmetiStudenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPredmetiStudenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NazivPredmeta,
-            this.Profesor,
-            this.GodinaStudija,
-            this.ProsjekOcjena});
-            this.dgvPredmetiStudenta.Location = new System.Drawing.Point(279, 135);
-            this.dgvPredmetiStudenta.Name = "dgvPredmetiStudenta";
-            this.dgvPredmetiStudenta.ReadOnly = true;
-            this.dgvPredmetiStudenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPredmetiStudenta.Size = new System.Drawing.Size(641, 226);
-            this.dgvPredmetiStudenta.TabIndex = 20;
-            this.dgvPredmetiStudenta.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvPredmetiStudenta_MouseClick);
-            // 
-            // lblBrojPolozenih
-            // 
-            this.lblBrojPolozenih.AutoSize = true;
-            this.lblBrojPolozenih.Font = new System.Drawing.Font("Zilla Slab", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBrojPolozenih.Location = new System.Drawing.Point(674, 371);
-            this.lblBrojPolozenih.Name = "lblBrojPolozenih";
-            this.lblBrojPolozenih.Size = new System.Drawing.Size(226, 22);
-            this.lblBrojPolozenih.TabIndex = 21;
-            this.lblBrojPolozenih.Text = "Broj polozenih predmeta je: ";
-            // 
-            // checkDetailsToolStripMenuItem
-            // 
-            this.checkDetailsToolStripMenuItem.Name = "checkDetailsToolStripMenuItem";
-            this.checkDetailsToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.checkDetailsToolStripMenuItem.Text = "Check Details";
-            this.checkDetailsToolStripMenuItem.Click += new System.EventHandler(this.checkDetailsToolStripMenuItem_Click);
-            // 
-            // pbProfilnaStudenta
-            // 
-            this.pbProfilnaStudenta.Location = new System.Drawing.Point(36, 61);
-            this.pbProfilnaStudenta.Margin = new System.Windows.Forms.Padding(4);
-            this.pbProfilnaStudenta.Name = "pbProfilnaStudenta";
-            this.pbProfilnaStudenta.Size = new System.Drawing.Size(183, 217);
-            this.pbProfilnaStudenta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbProfilnaStudenta.TabIndex = 1;
-            this.pbProfilnaStudenta.TabStop = false;
-            // 
             // NazivPredmeta
             // 
             this.NazivPredmeta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -404,13 +404,13 @@
             this.GodinaStudija.Name = "GodinaStudija";
             this.GodinaStudija.ReadOnly = true;
             // 
-            // ProsjekOcjena
+            // Ocjena
             // 
-            this.ProsjekOcjena.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ProsjekOcjena.DataPropertyName = "ProsjekOcjena";
-            this.ProsjekOcjena.HeaderText = "Prosjek ocjena";
-            this.ProsjekOcjena.Name = "ProsjekOcjena";
-            this.ProsjekOcjena.ReadOnly = true;
+            this.Ocjena.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ocjena.DataPropertyName = "OcjenaPredmeta";
+            this.Ocjena.HeaderText = "Ocjena";
+            this.Ocjena.Name = "Ocjena";
+            this.Ocjena.ReadOnly = true;
             // 
             // frmStudentPodaci
             // 
@@ -433,10 +433,10 @@
             this.msMeni.PerformLayout();
             this.gbPodaci.ResumeLayout(false);
             this.gbPodaci.PerformLayout();
-            this.gbNovaFotografija.ResumeLayout(false);
-            this.gbNovaFotografija.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPredmetiStudenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilnaStudenta)).EndInit();
+            this.gbNovaFotografija.ResumeLayout(false);
+            this.gbNovaFotografija.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -476,6 +476,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NazivPredmeta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Profesor;
         private System.Windows.Forms.DataGridViewTextBoxColumn GodinaStudija;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProsjekOcjena;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ocjena;
     }
 }

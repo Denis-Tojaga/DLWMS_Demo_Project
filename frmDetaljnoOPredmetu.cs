@@ -40,9 +40,8 @@ namespace DLWMS_Demo
             lblPredavac.Text = predmet.PredavacPredmeta.ToString();
             lblBrojSati.Text = predmet.BrojSati.ToString();
             lblECTS.Text = predmet.ECTS.ToString();
-            var listaOcjenaINT = predmet.OcjenePredmeta;
-            var listaInToString = listaOcjenaINT.Select(x => new { NumberAsString = x.ToString() }).ToList();
-            dgvOcjenePredmeta.DataSource = listaInToString;
+            
+            //dgvOcjenePredmeta.DataSource = listaInToString;
         }
 
         private void btnGoBack_Click(object sender, EventArgs e)

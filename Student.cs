@@ -22,50 +22,38 @@ namespace DLWMS_Demo
         public Image SlikaStudenta { get; set; }
 
         public string Password { get; set; }
+        public  double  ProsjekOcjena { get; set; }
 
         public Student()
         {
             PredmetiStudenta = new List<Predmet>();
             DodajBuiltInPredmete();
-            DodajBuiltInOcjene();
-            PostaviProsjekPredmetima();
+            DodajBuiltInOcjeneStudentu();
+            ProsjekOcjena=PostaviProsjekStudentu();
         }
 
         /// <summary>
         /// Dodavanje ugradjenih predmeta prilikom kreiranja studenta,kao i ocjena za taj predmet,za svaki predmet se odmah izracuna prosjek ocjena
         /// i postavlja u vrijednost propertyja
         /// </summary>
-        private void DodajBuiltInOcjene()
+        private void DodajBuiltInOcjeneStudentu()
         {
             foreach (var predmet in PredmetiStudenta)
-            {
-                predmet.OcjenePredmeta.Add(randomOcjena.Next(5, 10));
-                predmet.OcjenePredmeta.Add(randomOcjena.Next(5, 10));
-                predmet.OcjenePredmeta.Add(randomOcjena.Next(5, 10));
-                predmet.OcjenePredmeta.Add(randomOcjena.Next(5, 10));
-                predmet.OcjenePredmeta.Add(randomOcjena.Next(5, 10));
-            }
+                predmet.OcjenaPredmeta=randomOcjena.Next(5, 10);
         }
         private void DodajBuiltInPredmete()
         {
             foreach (var predmet in InMemoryDB.Predmeti)
                 PredmetiStudenta.Add(predmet);
         }
-        private void PostaviProsjekPredmetima()
+        private double PostaviProsjekStudentu()
         {
+            double ProsjekStudenta = 0;
+            if (PredmetiStudenta.Count == 0)
+                return ProsjekStudenta;
             foreach (var predmet in PredmetiStudenta)
-                predmet.ProsjekOcjena = IzracunajProsjekOcjena(predmet);
+                predmet.OcjenaPredmeta += predmet.OcjenaPredmeta;
+            return ProsjekStudenta / PredmetiStudenta.Count;
         }
-        private double IzracunajProsjekOcjena(Predmet predmetStudenta)
-        {
-            double prosjek = 0;
-            if (predmetStudenta.OcjenePredmeta.Count == 0)
-                return prosjek;
-            foreach (var ocjena in predmetStudenta.OcjenePredmeta)
-                prosjek += ocjena;
-            return prosjek / predmetStudenta.OcjenePredmeta.Count;
-        }
-
-       
     }
 }
